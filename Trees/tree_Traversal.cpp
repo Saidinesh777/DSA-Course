@@ -8,7 +8,7 @@ class Node{
     Node *right;
     Node(int ele){
         data = ele;
-        left = right = nullptr;
+        left  = right = nullptr;
     }
 };
 
@@ -20,38 +20,20 @@ void inorder(Node *root){
     inorder(root->right);
 }
 
-// void inorder_iter(Node *root){
-//     stack<Node *> stk;
-//     Node *p = root;
-
-//     while(p!=nullptr || !stk.empty()){
-//         while(p!=nullptr){
-//             stk.push(p);
-//             p = p->left;
-//         }
-//         p = stk.top();
-//         stk.pop();
-        
-//         cout<<p->data<<" ";
-        
-//         p = p->right;
-//     };
-// }
-
 void postorder(Node *root){
-    if(root == nullptr) return;
-
+        if(root == nullptr) return;
+    
     postorder(root->left);
-    postorder(root->right);
+    postorder(root->right);  
     cout<<root->data<<" ";
 }
 
 void preorder(Node *root){
     if(root == nullptr) return;
 
-    cout<<root->data<<" ";
+    cout<<root->data<<" ";  
     preorder(root->left);
-    preorder(root->right);
+    preorder(root->right);    
 }
 
 int main(){
@@ -69,7 +51,7 @@ int main(){
     root->right->right->left->right = new Node(9);
 
     root->right->right->right = new Node(7);
-
+     
     cout<<"Preorder: ";
     preorder(root);
     cout<<endl;
@@ -81,6 +63,6 @@ int main(){
     cout<<"Postorder: ";
     postorder(root);
     cout<<endl;
-
+    
     return 0;
 }
