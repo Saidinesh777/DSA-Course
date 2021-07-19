@@ -16,7 +16,7 @@ int main(){
     if(Phonebook.find(name) == Phonebook.end()){
         cout<<"Number not found"<<endl;
     }else{
-        cout<<"Number of"<<name<<" is "<<Phonebook[name]<<endl;
+        cout<<"Number of "<<name<<" is "<<Phonebook[name]<<endl;
     }
 
     return 0;
